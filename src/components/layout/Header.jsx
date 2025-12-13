@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
+import logoImage from '../../assets/images/logo.png';
 
 const HeaderContainer = styled.header`
   width: 100%;
@@ -72,7 +73,7 @@ const LanguageIndicator = styled.div`
 `;
 
 const LanguageText = styled.div`
-  color: ${props => props.active ? props.theme.colors.textGrey : props.theme.colors.textGreyLight};
+  color: ${props => props.active ? props.theme.colors.textGreyLight : props.theme.colors.textGrey};
   font-size: 14px;
   font-family: ${props => props.theme.fonts.primary};
   font-weight: 500;
@@ -96,7 +97,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <Logo>
-        <img src="src\assets\images\logo.png" alt="Zbojnícka chata logo" />
+        <img src={logoImage} alt="Zbojnícka chata logo"/>
       </Logo>
       
       <Nav>
