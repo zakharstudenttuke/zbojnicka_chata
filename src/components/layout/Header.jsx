@@ -3,14 +3,14 @@ import { useState } from 'react';
 import logoImage from '../../assets/images/logo.png';
 
 const HeaderContainer = styled.header`
-  width: 100%;
+  width: 1920px;
+  height: 100px;
   background: ${props => props.theme.colors.deepSpaceBlue};
   position: relative;
   padding: 0 37px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
 `;
 
 const Logo = styled.div`
@@ -32,6 +32,7 @@ const Nav = styled.nav`
   justify-content: flex-start;
   align-items: center;
   gap: 45px;
+  margin-left: auto;
 `;
 
 const NavLink = styled.a`
@@ -43,6 +44,7 @@ const NavLink = styled.a`
   text-align: center;
   cursor: pointer;
   transition: color 0.3s ease;
+  white-space: nowrap;
   
   &:hover {
     color: ${props => props.theme.colors.frostedBlue2};
@@ -73,7 +75,7 @@ const LanguageIndicator = styled.div`
 `;
 
 const LanguageText = styled.div`
-  color: ${props => props.active ? props.theme.colors.textGreyLight : props.theme.colors.textGrey};
+  color: ${props => props.active ? props.theme.colors.textGrey : props.theme.colors.textGreyLight};
   font-size: 14px;
   font-family: ${props => props.theme.fonts.primary};
   font-weight: 500;
@@ -97,7 +99,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <Logo>
-        <img src={logoImage} alt="Zbojnícka chata logo"/>
+        <img src={logoImage} alt="Zbojnícka chata logo" />
       </Logo>
       
       <Nav>

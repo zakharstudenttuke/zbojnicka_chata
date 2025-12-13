@@ -6,8 +6,8 @@ export const theme = {
     cerulean: '#007EA7',
     deepSpaceBlue: '#003249',
     white: '#FFFFFF',
-    textGrey: '#71717A',
-    textGreyLight: 'rgba(170, 170, 170, 0.20)',
+    textGreyLight: '#adadbaff',
+    textGrey: '#18181B',
   },
   fonts: {
     primary: '"Montserrat", sans-serif',

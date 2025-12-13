@@ -1,27 +1,22 @@
 import styled from 'styled-components';
-import { Facebook, Instagram, Mail, Twitter, X } from 'lucide-react';
-import logoImage from '../../assets/images/logo.png'; // або твій шлях
+import { Facebook, Instagram, Mail } from 'lucide-react';
+import logoImage from '../../assets/images/logo.png';
 
 const FooterContainer = styled.footer`
-  width: 100%;
-  height: 432px;
+  width: 1920px;
   background: ${props => props.theme.colors.deepSpaceBlue};
-  padding: 66px 67px 80px;
+  padding: 66px 67px 66px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 50px;
-  
-  @media (max-width: ${props => props.theme.breakpoints.desktop}) {
-    flex-wrap: wrap;
-    padding: 40px 30px;
-  }
 `;
 
 const LogoSection = styled.div`
   width: 360.68px;
   height: 290px;
   position: relative;
+  flex-shrink: 0;
   
   img {
     width: 324.61px;
@@ -29,28 +24,13 @@ const LogoSection = styled.div`
     margin-top: 14px;
     margin-left: 18px;
   }
-  
-  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    width: 100%;
-    height: auto;
-    
-    img {
-      width: 100%;
-      height: auto;
-      margin: 0;
-    }
-  }
 `;
 
 const FooterColumn = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${props => props.gap || '30px'};
-  flex: ${props => props.flex || '0 0 auto'};
-  
-  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    width: 100%;
-  }
+  flex-shrink: 0;
 `;
 
 const ColumnTitle = styled.h3`
@@ -119,12 +99,10 @@ const SocialIcon = styled.a`
 const Footer = () => {
   return (
     <FooterContainer>
-      {/* Logo Section */}
       <LogoSection>
         <img src={logoImage} alt="Zbojnícka chata" />
       </LogoSection>
 
-      {/* Contact Section */}
       <FooterColumn gap="31px" style={{ width: '345px' }}>
         <ColumnTitle>KONTAKTUJTE NÁS</ColumnTitle>
         <ColumnText>
@@ -144,7 +122,6 @@ const Footer = () => {
         </ContactInfo>
       </FooterColumn>
 
-      {/* Social Media Section */}
       <FooterColumn gap="30px" style={{ width: '262px' }}>
         <ColumnTitle>SLEDUJTE NÁS</ColumnTitle>
         <ColumnText>
@@ -158,13 +135,12 @@ const Footer = () => {
           <SocialIcon href="https://instagram.com" target="_blank" rel="noopener noreferrer">
             <Instagram />
           </SocialIcon>
-          <SocialIcon href="https://x.com" target="_blank" rel="noopener noreferrer">
-            <Twitter />
+          <SocialIcon href="mailto:zbojnickehochata@gmail.com">
+            <Mail />
           </SocialIcon>
         </SocialIcons>
       </FooterColumn>
 
-      {/* About Section */}
       <FooterColumn gap="26px" style={{ width: '289.74px' }}>
         <ColumnTitle size="16px">O nás</ColumnTitle>
         <ColumnText>
