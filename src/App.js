@@ -17,6 +17,7 @@ import ScrollToTop from './utils/ScrollToTop';
 import AccommodationPage from './pages/AccommodationPage';
 import ActivitiesPage from './pages/ActivitiesPage';
 import ActivityPage from './pages/ActivityPage';
+import GalleryPage from './pages/GalleryPage';
 
 const AppContainer = styled.div`
   width: 100%;
@@ -68,6 +69,7 @@ function App() {
               <Route path="/accommodation" element={<AccommodationPage />} />
               <Route path="/activities" element={<ActivitiesPage />} />
               <Route path="/activity" element={<ActivityPage />} />
+              <Route path="/gallery" element={<GalleryPage />} />
               {/* Додай інші маршрути пізніше */}
             </Routes>
             <Footer />
