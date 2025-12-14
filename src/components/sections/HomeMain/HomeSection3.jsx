@@ -128,7 +128,7 @@ const HomeSection3 = () => {
               title="Pre tých, čo chcú viac ako len nocľah"
               description="Tu neprídete na 'dovolenku'. Prídete, keď potrebujete vypnúť hlavu, nabrať silu a pocítiť, že ste nažive. Pre horolezcov, turistov, fotografov, pre každého, kto vie, že najlepšie veci sa získavajú ťažko."
               ctaText="Pozrieť ubytovanie a ceny"
-              onCtaClick={() => navigate("/")}
+              onCtaClick={() => navigate("/reservation/dates")}
               dark={true}
               gap="25px"
             />

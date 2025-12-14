@@ -18,6 +18,8 @@ import AccommodationPage from './pages/AccommodationPage';
 import ActivitiesPage from './pages/ActivitiesPage';
 import ActivityPage from './pages/ActivityPage';
 import GalleryPage from './pages/GalleryPage';
+import ContactPage from './pages/ContactPage';
+import DatesPage from './pages/ReservationPages/DatesPage';
 
 const AppContainer = styled.div`
   width: 100%;
@@ -60,20 +62,39 @@ function App() {
       <GlobalStyles />
       <Router>
         <AppContainer>
-          <ScaledWrapper scale={scale}>
-            <Header />
-            <ScrollToTop />
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/about" element={<AboutUsPage />} />
-              <Route path="/accommodation" element={<AccommodationPage />} />
-              <Route path="/activities" element={<ActivitiesPage />} />
-              <Route path="/activity" element={<ActivityPage />} />
-              <Route path="/gallery" element={<GalleryPage />} />
-              {/* Додай інші маршрути пізніше */}
-            </Routes>
-            <Footer />
-          </ScaledWrapper>
+          <Routes>
+            <Route
+              path="/*"
+              element={
+                <ScaledWrapper scale={scale}>
+                  <Header />
+                  <ScrollToTop />
+                  <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/about" element={<AboutUsPage />} />
+                    <Route path="/accommodation" element={<AccommodationPage />} />
+                    <Route path="/activities" element={<ActivitiesPage />} />
+                    <Route path="/activity" element={<ActivityPage />} />
+                    <Route path="/gallery" element={<GalleryPage />} />
+                    <Route path="/contact" element={<ContactPage />} />
+                  </Routes>
+                  <Footer />
+                </ScaledWrapper>
+              }
+            />
+
+            <Route
+              path="/reservation/*"
+              element={
+                <ScaledWrapper scale={scale}>
+                  <ScrollToTop />
+                  <Routes>
+                    <Route path="/dates" element={<DatesPage />} />
+                  </Routes>
+                </ScaledWrapper>
+              }
+            />
+          </Routes>
         </AppContainer>
       </Router>
     </ThemeProvider>

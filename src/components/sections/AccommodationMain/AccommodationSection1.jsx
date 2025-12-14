@@ -6,6 +6,7 @@ import s1_b1_i1 from '../../../assets/images/AccommodationImages/s1-b1-i1.png';
 import s1_b2_i1 from '../../../assets/images/AccommodationImages/s1-b2-i1.png';
 import s1_b2_i2 from '../../../assets/images/AccommodationImages/s1-b2-i2.png';
 import LargeTextWithImageBlock from '../../common/LargeTextWithImageBlock';
+import { useNavigate } from 'react-router-dom';
 
 const SectionContainer = styled.section`
   width: 1920px;
@@ -32,6 +33,8 @@ const RightBlock = styled.div`
 `;
 
 const AccommodationSection1 = () => {
+  const navigate = useNavigate();
+
   return (
     <SectionContainer>
       {/* Ľavý blok */}
@@ -43,7 +46,7 @@ const AccommodationSection1 = () => {
           ctaText="Rezervovať teraz"
           onCtaClick={() => {
             window.scrollTo(0, 0);
-            // navigate('/about');
+            navigate('/reservation/dates');
           }}
           backgroundImage={s1_b1_i1}
         />
@@ -74,7 +77,7 @@ const AccommodationSection1 = () => {
           title="Súkromie 1960 metrov nad všednými dňami"
           description="Ponúkame aj menšie 2–6 lôžkové izby priamo pri Zbojníckom plese. Ráno otvoríte okno a prvý pohľad patrí Jahňaciemu štítu a Prielomu. Ideálne pre páry, rodiny alebo malé partie, ktoré chcú zažiť Tatry naplno a v pokoji. Počet takýchto izieb je prísne obmedzený."
           ctaText="Rezervovať ubytovanie"
-        //   onCtaClick={() => navigate('/accommodation')}
+          onCtaClick={() => navigate('/reservation/dates')}
           dark={true}
         />
         

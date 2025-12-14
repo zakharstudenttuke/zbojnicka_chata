@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-import { ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
 
 const BannerContainer = styled.section`
   width: 1920px;
@@ -32,9 +30,9 @@ const Overlay = styled.div`
 
 const Content = styled.div`
   position: absolute;
-  top: 121px;
+  top: 176px;
   width: 100%;
-  right: 40%;
+  right: 45%;
   transform: translateX(50%);
   z-index: 3;
   text-align: center;
@@ -49,6 +47,7 @@ const Subtitle = styled(motion.h2)`
   font-family: ${props => props.theme.fonts.primary};
   font-weight: 200;
   line-height: 68px;
+  padding-right: 460px;
   margin-bottom: 20px;
   
   @media (max-width: ${props => props.theme.breakpoints.desktop}) {
@@ -81,13 +80,14 @@ const Title = styled(motion.h1)`
 `;
 
 const TitleUnderline = styled(motion.div)`
-  width: 230px;
+  width: 150px;
   height: 2px;
+
   background: ${props => props.theme.colors.frostedBlue};
   margin: 0;
   
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    width: 150px;
+    width: 100px;
   }
 `;
 
@@ -95,50 +95,10 @@ const TitleWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 35px;
+  padding-right: 80px;
 `;
 
-const CTAButton = styled(motion.button)`
-  margin-top: 30px;
-  padding: 10px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: transform 0.3s ease;
-  
-  &:hover {
-    transform: translateX(5px);
-  }
-`;
-
-const CTAText = styled.span`
-  color: white;
-  font-size: 24px;
-  font-family: ${props => props.theme.fonts.primary};
-  font-weight: 700;
-  line-height: 24px;
-  
-  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    font-size: 18px;
-  }
-`;
-
-const CTAIcon = styled.div`
-  width: 44px;
-  height: 44px;
-  background: ${props => props.theme.colors.frostedBlue};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.30);
-`;
-
-const HeroBanner = ({ backgroundImage = 'https://placehold.co/1920x1080' }) => {
-
-  const navigate = useNavigate();
+const ContactBanner = ({ backgroundImage = 'https://placehold.co/1920x1080' }) => {
 
   return (
     <BannerContainer>
@@ -151,13 +111,13 @@ const HeroBanner = ({ backgroundImage = 'https://placehold.co/1920x1080' }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Vitajte na najdivokejšej chate Tatier
+          Kontakt
         </Subtitle>
 
         <TitleWrapper>
           <TitleUnderline
             initial={{ width: 0 }}
-            animate={{ width: 230 }}
+            animate={{ width: 150 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           />
           <Title
@@ -169,25 +129,9 @@ const HeroBanner = ({ backgroundImage = 'https://placehold.co/1920x1080' }) => {
           </Title>
         </TitleWrapper>
         
-        <CTAButton
-          onClick={() => {navigate('/reservation/dates')}}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          whileHover={{ 
-            scale: 1.05,
-            transition: {duration: 0.2} 
-          }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <CTAText>Rezervujte si pobyt</CTAText>
-          <CTAIcon>
-            <ChevronRight color="#007EA7" size={20} />
-          </CTAIcon>
-        </CTAButton>
       </Content>
     </BannerContainer>
   );
 };
 
-export default HeroBanner;
+export default ContactBanner;

@@ -85,7 +85,7 @@ const LanguageText = styled.div`
 
 const Header = () => {
   const location = useLocation();
-  const [language, setLanguage] = useState('EN');
+  const [language, setLanguage] = useState('SK');
 
   const navItems = [
     { id: 'home', label: 'Hlavná stránka', path: '/' },
@@ -94,7 +94,7 @@ const Header = () => {
     { id: 'activities', label: 'Aktivity', path: '/activities' },
     { id: 'gallery', label: 'Galéria', path: '/gallery' },
     { id: 'contact', label: 'Kontakt', path: '/contact' },
-    { id: 'reserve', label: 'Rezervovať', path: '/reserve' },
+    { id: 'reserve', label: 'Rezervovať', path: '/reservation/dates' },
   ];
 
   return (

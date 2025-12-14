@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import s4_b1_i1 from '../../../assets/images/AboutUsImages/s4-b1-i1.png';
+import { useNavigate } from 'react-router-dom';
 
 const SectionContainer = styled.section`
   width: 1920px;
@@ -87,6 +88,8 @@ const MainText = styled.h2`
 `;
 
 const AboutSection4 = () => {
+  const navigate = useNavigate();
+
   return (
     <SectionContainer>
       <Overlay />
@@ -99,7 +102,7 @@ const AboutSection4 = () => {
             <CTAButton
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => console.log('Rezervovať clicked')}
+                onClick={() => navigate('/reservation/dates')}
                 >
                 <CTAText>Rezervovať pobyt</CTAText>
                 <CTAIcon>
