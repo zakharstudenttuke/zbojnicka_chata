@@ -72,9 +72,15 @@ const Description = styled.p`
   margin-top: 0;
 `;
 
+const CTAButtonWrapper = styled.div`
+  height: 70px;
+  margin-top: auto;
+  align-self: flex-start;
+  padding-top: 20px;
+  padding-left: 110px; 
+`;
+
 const CTAButton = styled(motion.button)`
-  margin-left: 159px;
-  margin-top: 10px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -89,12 +95,11 @@ const CTAButton = styled(motion.button)`
 `;
 
 const CTAText = styled.span`
-  color: black;
+  color: ${props => props.dark ? '#FFFFFF' : '#000000'};
   font-size: 14px;
   font-family: ${props => props.theme.fonts.primary};
   font-weight: 700;
   line-height: 14px;
-  text-align: center;
 `;
 
 const CTAIcon = styled.div`
@@ -130,16 +135,18 @@ const LargeTextWithImageBlock = ({
         <Description>{description}</Description>
         
         {ctaText && (
-          <CTAButton
-            onClick={onCtaClick}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <CTAText>{ctaText}</CTAText>
-            <CTAIcon>
-              <ChevronRight color="#007EA7" size={12} />
-            </CTAIcon>
-          </CTAButton>
+          <CTAButtonWrapper>
+            <CTAButton
+              onClick={onCtaClick}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <CTAText>{ctaText}</CTAText>
+              <CTAIcon>
+                <ChevronRight color="#007EA7" size={12} />
+              </CTAIcon>
+            </CTAButton>
+          </CTAButtonWrapper>
         )}
       </Content>
     </BlockContainer>

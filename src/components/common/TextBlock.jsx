@@ -11,7 +11,7 @@ const BlockContainer = styled(motion.div)`
 `;
 
 const Content = styled.div`
-  width: 390px;
+  width: 460px;
   height: 100%;
   padding: 45px;
   display: flex;
