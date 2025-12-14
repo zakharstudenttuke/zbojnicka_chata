@@ -15,6 +15,8 @@ import {
 } from 'react-router-dom';
 import ScrollToTop from './utils/ScrollToTop';
 import AccommodationPage from './pages/AccommodationPage';
+import ActivitiesPage from './pages/ActivitiesPage';
+import ActivityPage from './pages/ActivityPage';
 
 const AppContainer = styled.div`
   width: 100%;
@@ -64,8 +66,9 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutUsPage />} />
               <Route path="/accommodation" element={<AccommodationPage />} />
+              <Route path="/activities" element={<ActivitiesPage />} />
+              <Route path="/activity" element={<ActivityPage />} />
               {/* Додай інші маршрути пізніше */}
-              {/* <Route path="/accommodation" element={<AccommodationPage />} /> */}
             </Routes>
             <Footer />
           </ScaledWrapper>

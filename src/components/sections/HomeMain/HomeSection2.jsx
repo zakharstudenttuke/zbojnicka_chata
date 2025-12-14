@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import s2_b1_i1 from '../../../assets/images/HomeImages/s2-b1-i1.png';
 import Mountain from '../../../assets/images/HomeImages/mountain.png';
 import Binoculars from '../../../assets/images/HomeImages/binoculars.png';
@@ -194,6 +195,7 @@ const HomeSection2 = () => {
     { text: 'Výstupy s horským vodcom', icon: Map },
     { text: 'Pozorovanie kamzíkov a svišťov', icon: Binoculars },
   ];
+  const navigate = useNavigate();
 
   return (
     <SectionContainer>
@@ -236,7 +238,7 @@ const HomeSection2 = () => {
             <CTAButton
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => console.log('Všetky aktivity clicked')}
+              onClick={() => navigate('/activities')}
             >
               <CTAText>Zobraziť všetky túry a aktivity</CTAText>
               <CTAIcon>

@@ -31,4 +31,7 @@ export const GlobalStyles = createGlobalStyle`
     height: auto;
     display: block;
   }
+  .lucida-fax {
+    font-family: 'Lucida Fax', 'Times New Roman', serif;
+  }
 `;

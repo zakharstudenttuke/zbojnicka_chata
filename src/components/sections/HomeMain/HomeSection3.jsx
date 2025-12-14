@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 import TextBlock from '../../common/TextBlock';
 import ImageBlock from '../../common/ImageBlock';
 import s3_b1_i1 from '../../../assets/images/HomeImages/s3-b1-i1.png';
@@ -79,6 +80,7 @@ const Image = styled.img`
 `;
 
 const HomeSection3 = () => {
+  const navigate = useNavigate();
   return (
     <SectionContainer>
       {/* Ľavý hlavný blok 960x960 */}
@@ -95,7 +97,7 @@ const HomeSection3 = () => {
           title="Žiadna cesta autom, len vlastné nohy"
           description="2–2,5 hodiny z Hrebienka alebo celý deň zo Starého Smokovca. Po ceste miniete vodopády, plesá a pravdepodobne aj kamzíkov."
           ctaText="Pozret trasu"
-          onCtaClick={() => console.log('Trasa clicked')}
+          onCtaClick={() => navigate("/activities")}
           gap="25px"
         />
         
@@ -105,7 +107,7 @@ const HomeSection3 = () => {
           title="26 plies, kamzíky, ticho"
           description="Žiadne filtre. Žiadne davy. Len skutočné Tatry – divoké, čisté, nedotknuté. Každý deň iná obloha, každý krok iný výhľad."
           ctaText="Zobraziť galériu"
-          onCtaClick={() => console.log('Galéria clicked')}
+          onCtaClick={() => navigate("/gallery")}
           gap="5px"
         />
         
@@ -126,7 +128,7 @@ const HomeSection3 = () => {
               title="Pre tých, čo chcú viac ako len nocľah"
               description="Tu neprídete na 'dovolenku'. Prídete, keď potrebujete vypnúť hlavu, nabrať silu a pocítiť, že ste nažive. Pre horolezcov, turistov, fotografov, pre každého, kto vie, že najlepšie veci sa získavajú ťažko."
               ctaText="Pozrieť ubytovanie a ceny"
-              onCtaClick={() => console.log('Ubytovanie clicked')}
+              onCtaClick={() => navigate("/")}
               dark={true}
               gap="25px"
             />
