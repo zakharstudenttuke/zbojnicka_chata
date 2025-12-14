@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 import TextBlock from '../../common/TextBlock';
 import ImageBlock from '../../common/ImageBlock';
 import LargeTextWithImageBlock from '../../common/LargeTextWithImageBlock';
@@ -32,6 +33,7 @@ const RightBlock = styled.div`
 `;
 
 const HomeSection1 = () => {
+  const navigate = useNavigate();
   return (
     <SectionContainer>
       {/* Ľavý blok - 4 selekcie */}
@@ -42,7 +44,7 @@ const HomeSection1 = () => {
           title="Zažite Tatry v každom období"
           description="Večerný výhľad na Veľkú studenú dolinu je očarujúci v každom ročnom období. Rovnako magické je aj byť prvým dobrodruhom v doline pod lúčmi preberajúceho sa slnka."
           ctaText="Viac o ubytovaní"
-          onCtaClick={() => console.log('Ubytovanie clicked')}
+          onCtaClick={() => navigate('/accommodation')}
           subtitleSize="24px"
           titleSize="24px"
           gap="35px"
@@ -66,7 +68,7 @@ const HomeSection1 = () => {
           title="Domáca kuchyňa"
           description="Počas dňa ponúkame výber teplých polievok, hlavných jedál a dezertov. Ďalej si môžete objednať aj raňajky a večeru. Pri dlhších pobytoch je jedálniček v rámci polpenzie rôznorodý. Náš nápojový lístok je taktiež bohatý – dobré pivo, čaj, víno, káva, nealko nápoje a ďalšie iné."
           ctaText="Zistiť viac"
-          onCtaClick={() => console.log('Stravovanie clicked')}
+          onCtaClick={() => navigate('/accommodation')}
           dark={true}
         />
       </LeftBlock>
@@ -78,7 +80,10 @@ const HomeSection1 = () => {
           title="Zbojnícka chata"
           description="Postavená v roku 1948, na 1960 m n. m. vo Veľkej Studenej doline. Najvyššie položená chata vo Vysokých Tatrách s celoročnou prevádzkou. Miesto, kde sa stretávajú horolezci, turisti aj zbojnícke legendy. Žiadny signál, žiadna cesta autom – len čistá príroda a ticho, ktoré lieči."
           ctaText="Zistiť viac o chate"
-          onCtaClick={() => console.log('O chate clicked')}
+          onCtaClick={() => {
+            window.scrollTo(0, 0);
+            navigate('/about');
+          }}
           backgroundImage={s1_b2_i1}
         />
       </RightBlock>

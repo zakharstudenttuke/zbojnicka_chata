@@ -7,10 +7,18 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html, body, #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
   body {
     font-family: ${props => props.theme.fonts.primary};
-    background-color: ${props => props.theme.colors.background};
-    color: ${props => props.theme.colors.text};
+    background-color: #FFFFFF;
+    color: ${props => props.theme.colors.deepSpaceBlue};
+    overflow-x: hidden;
   }
 
   a {
@@ -21,5 +29,6 @@ export const GlobalStyles = createGlobalStyle`
   img {
     max-width: 100%;
     height: auto;
+    display: block;
   }
 `;

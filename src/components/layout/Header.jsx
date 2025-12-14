@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import logoImage from '../../assets/images/logo.png';
 
 const HeaderContainer = styled.header`
@@ -13,7 +14,7 @@ const HeaderContainer = styled.header`
   align-items: center;
 `;
 
-const Logo = styled.div`
+const Logo = styled(Link)`
   width: 100px;
   height: 100px;
   position: relative;
@@ -35,8 +36,8 @@ const Nav = styled.nav`
   margin-left: auto;
 `;
 
-const NavLink = styled.a`
-  color: ${props => props.active ? props.theme.colors.frostedBlue2 : props.theme.colors.white};
+const NavLink = styled(Link)`
+  color: ${props => props.$active ? props.theme.colors.frostedBlue2 : props.theme.colors.white};
   font-size: 18px;
   font-family: ${props => props.theme.fonts.primary};
   font-weight: 700;
@@ -83,22 +84,22 @@ const LanguageText = styled.div`
 `;
 
 const Header = () => {
-  const [activeLink, setActiveLink] = useState('home');
+  const location = useLocation();
   const [language, setLanguage] = useState('EN');
 
   const navItems = [
-    { id: 'home', label: 'Hlavná stránka' },
-    { id: 'about', label: 'O nás' },
-    { id: 'accommodation', label: 'Ubytovanie' },
-    { id: 'activities', label: 'Aktivity' },
-    { id: 'gallery', label: 'Galéria' },
-    { id: 'contact', label: 'Kontakt' },
-    { id: 'reserve', label: 'Rezervovať' },
+    { id: 'home', label: 'Hlavná stránka', path: '/' },
+    { id: 'about', label: 'O nás', path: '/about' },
+    { id: 'accommodation', label: 'Ubytovanie', path: '/accommodation' },
+    { id: 'activities', label: 'Aktivity', path: '/activities' },
+    { id: 'gallery', label: 'Galéria', path: '/gallery' },
+    { id: 'contact', label: 'Kontakt', path: '/contact' },
+    { id: 'reserve', label: 'Rezervovať', path: '/reserve' },
   ];
 
   return (
     <HeaderContainer>
-      <Logo>
+      <Logo to="/">
         <img src={logoImage} alt="Zbojnícka chata logo" />
       </Logo>
       
@@ -106,8 +107,8 @@ const Header = () => {
         {navItems.map(item => (
           <NavLink
             key={item.id}
-            active={activeLink === item.id}
-            onClick={() => setActiveLink(item.id)}
+            to={item.path}
+            $active={location.pathname === item.path}
           >
             {item.label}
           </NavLink>

@@ -6,6 +6,14 @@ import { theme } from './styles/theme';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import HomePage from './pages/HomePage';
+import AboutUsPage from './pages/AboutUsPage';
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
+import ScrollToTop from './utils/ScrollToTop';
 
 const AppContainer = styled.div`
   width: 100%;
@@ -46,13 +54,21 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <AppContainer>
-        <ScaledWrapper scale={scale}>
-          <Header />
-          <HomePage />
-          <Footer />
-        </ScaledWrapper>
-      </AppContainer>
+      <Router>
+        <AppContainer>
+          <ScaledWrapper scale={scale}>
+            <Header />
+            <ScrollToTop />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutUsPage />} />
+              {/* Додай інші маршрути пізніше */}
+              {/* <Route path="/accommodation" element={<AccommodationPage />} /> */}
+            </Routes>
+            <Footer />
+          </ScaledWrapper>
+        </AppContainer>
+      </Router>
     </ThemeProvider>
   );
 }
